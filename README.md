@@ -19,7 +19,7 @@ Please PR to this repo if you find a new package!
 * MIT-licensed open-source
 * React/Typescript Language
 
-Example snippet:
+Example code:
 
 ```tsx
 const Circuit = () => (
@@ -58,6 +58,8 @@ const Circuit = () => (
 * Python-like language (`ato`)
 * VS-code extension
 
+Example code:
+
 ```python
 from "generics/resistors.ato" import Resistor
 
@@ -87,6 +89,7 @@ module VoltageDivider:
 * Custom licensing (CERN Open Hardware License V2 or paid)
 * Mature
 
+Example code:
 
 ```
 ; create a coin cell battery
