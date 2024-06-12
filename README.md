@@ -6,13 +6,13 @@ Please PR to this repo if you find a new package!
 
 # Overview
 
-## PCB Design / EDA
+### PCB Design / EDA
 
 * [tscircuit](#tscircuit) - Open-source EDA package for schematic and PCB design using React and Typescript
 * [atopile](#atopile) - Open-source python-like language and toolchain to describe electronic circuit boards with code
 * [jitX](#jitx) - Mature project with custom language. Custom licensing
 
-## Simulation
+### Simulation
 
 * [ngspice](#ngspice) - SPICE simulator for electric and electronic circuits
 * [PySpice](#pyspice) - Simulate electronic circuits using Python and the Ngspice / Xyce simulators
