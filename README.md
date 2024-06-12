@@ -4,7 +4,7 @@
 
 Please PR to this repo if you find a new package!
 
-## Package Overview
+## Overview
 
 * [tscircuit](#tscircuit) - Open-source EDA package for schematic and PCB design using React and Typescript
 * [atopile](#atopile) - Open-source python-like language and toolchain to describe electronic circuit boards with code
