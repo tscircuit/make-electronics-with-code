@@ -6,9 +6,16 @@ Please PR to this repo if you find a new package!
 
 # Overview
 
+## PCB Design / EDA
+
 * [tscircuit](#tscircuit) - Open-source EDA package for schematic and PCB design using React and Typescript
 * [atopile](#atopile) - Open-source python-like language and toolchain to describe electronic circuit boards with code
 * [jitX](#jitx) - Mature project with custom language. Custom licensing
+
+## Simulation
+
+* [ngspice](#ngspice) - SPICE simulator for electric and electronic circuits
+* [PySpice](#pyspice) - Simulate electronic circuits using Python and the Ngspice / Xyce simulators
 
 # Packages
 
@@ -16,7 +23,7 @@ Please PR to this repo if you find a new package!
 
 [Website](https://tscircuit.com) &middot; [Github](https://github.com/tscircuit/tscircuit) &middot; [Quick start](https://docs.tscircuit.com/quickstart)
 
-* MIT-licensed open-source
+* MIT-licensed open-source (permissive)
 * React/Typescript Language
 
 Example code:
@@ -54,7 +61,7 @@ const Circuit = () => (
 
 [Website](https://atopile.io) &middot; [Github](https://github.com/atopile/atopile) &middot; [Quick Start](https://atopile.io/getting-started/)
 
-* Apache 2 open-source
+* Apache 2 open-source (permissive)
 * Python-like language (`ato`)
 * VS-code extension
 
@@ -101,4 +108,37 @@ val battery-y = board-height / 3.5; programmatically calculate an x and y positi
 val battery-x = board-width / -7.0; 
 place(battery) at loc(battery-x, battery-y, 90.0) on Top; place the battery on the top of the board at the calculated position
 ```
+
+## ngspice
+
+[Website](https://ngspice.sourceforge.io/) &middot; [SourceForge](https://sourceforge.net/projects/ngspice/) &middot; [Quick Start](https://ngspice.sourceforge.io/ngspice-tutorial.html)
+
+* BSD-3-Clause license
+
+Example code:
+![image](https://github.com/tscircuit/make-electronics-with-code/assets/1910070/bdedca55-7cb5-48c7-a594-9f63532855cb)
+
+## PySpice
+
+[Website](https://pypi.org/project/PySpice/) &middot; [Github](https://github.com/PySpice-org/PySpice)
+
+* GPLv3 Open-source
+
+Example code:
+
+```python
+class ParallelResistor2(SubCircuit):
+    __nodes__ = ('n1', 'n2')
+    def __init__(self, name, R1=1@u_Ω, R2=2@u_Ω):
+        SubCircuit.__init__(self, name, *self.__nodes__)
+        self.R(1, 'n1', 'n2', R1)
+        self.R(2, 'n1', 'n2', R2)
+
+circuit = Circuit('Test')
+circuit.subcircuit(ParallelResistor2('pr1', R2=2@u_Ω))
+circuit.X('1', 'pr1', 1, circuit.gnd)
+circuit.subcircuit(ParallelResistor2('pr2', R2=3@u_Ω))
+circuit.X('2', 'pr2', 1, circuit.gnd)
+```
+
 
